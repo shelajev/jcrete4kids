@@ -36,7 +36,7 @@ jobs:
 
       - name: Publish Labspace Compose artifact
         run: |
-          docker compose \
+          yes | docker compose \
             -f oci://dockersamples/labspace \
             -f compose.override.yaml \
             publish "$LABSPACE_ARTIFACT" \
