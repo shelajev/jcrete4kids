@@ -10,11 +10,14 @@ line() {
 }
 
 check_labspace() {
-  if command -v curl >/dev/null 2>&1; then
-    curl -fsS http://localhost:3030 >/dev/null
-  else
-    timeout 2 bash -c '</dev/tcp/127.0.0.1/3030' >/dev/null 2>&1
-  fi
+  "${COMPOSE[@]}" exec -T interface node -e '
+    const request = require("node:http").get("http://127.0.0.1:3030", (response) => {
+      response.resume();
+      response.on("end", () => process.exit(response.statusCode < 500 ? 0 : 1));
+    });
+    request.setTimeout(2000, () => request.destroy());
+    request.on("error", () => process.exit(1));
+  ' >/dev/null 2>&1
 }
 
 extract_tunnel_url() {
