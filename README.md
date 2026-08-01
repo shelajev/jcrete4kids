@@ -1,50 +1,57 @@
-# JCrete4Kids LabSpace
+# JCrete4Kids Codex Browser Games Labspace
 
-This repository contains a local Compose copy of the JCrete4Kids LabSpace plus a GitHub Codespaces controller container.
+This repository is a Labspace content repo for the workshop from `canva.link/ai-java`.
 
-## Open in Codespaces
-
-Use GitHub's **Code** menu and choose **Codespaces**, or open:
-
-https://codespaces.new/shelajev/jcrete4kids
-
-Codespaces starts a small controller container first. After VS Code opens, the `Start LabSpace` task runs in the terminal and shows progress for image pulls, container startup, health checks, and the Cloudflare URL.
-
-If the task does not start automatically, run:
-
-```sh
-.devcontainer/start-labspace.sh
-```
-
-The task starts the LabSpace Compose stack and forwards these ports:
-
-- `3030`: LabSpace browser UI
-- `8085`: workspace IDE fallback
-
-The script prints the temporary Cloudflare quick tunnel URL at the end:
-
-```text
-==> Open LabSpace
-https://example.trycloudflare.com
-```
-
-To find the URL again later, run:
-
-```sh
-docker compose -p jcrete4kids -f compose.yaml logs --no-color cloudflared \
-  | grep -Eo 'https://[-a-zA-Z0-9]+\.trycloudflare\.com' \
-  | tail -1
-```
-
-The URL is a Cloudflare quick tunnel and can change whenever the container restarts.
+The lab is adapted for containers: learners use Codex in the browser IDE, Java runs a tiny local HTTP server, and JavaScript renders the games in the Labspace preview tab.
 
 ## Run Locally
 
+Build the local workspace image and start the Labspace:
+
 ```sh
-docker compose -p jcrete4kids -f compose.yaml up -d
-docker compose -p jcrete4kids -f compose.yaml logs -f cloudflared
+CONTENT_PATH=$PWD docker compose -f compose.yaml -f compose.local.yaml up --watch --build
 ```
 
-LabSpace runs at:
+Then open:
 
-http://localhost:3030
+<http://localhost:3030>
+
+The project files under `project/` are copied into the learner workspace.
+
+## Publish
+
+The published Labspace uses this prebuilt workspace image:
+
+```text
+olegselajev241/jcrete4kids-labspace-workspace:latest
+```
+
+Build and push the workspace image:
+
+```sh
+docker buildx build \
+  --platform linux/amd64,linux/arm64 \
+  -t olegselajev241/jcrete4kids-labspace-workspace:latest \
+  --push \
+  ./workspace
+```
+
+Publish the Labspace Compose artifact:
+
+```sh
+docker compose \
+  -f oci://dockersamples/labspace \
+  -f compose.override.yaml \
+  publish olegselajev241/jcrete4kids-labspace \
+  --with-env \
+  --resolve-image-digests \
+  -y
+```
+
+Run the published Labspace:
+
+```sh
+docker compose -f oci://olegselajev241/jcrete4kids-labspace up
+```
+
+The old Codespaces launcher has been preserved under `legacy/codespaces-launcher/`.

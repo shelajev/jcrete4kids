@@ -1,0 +1,5 @@
+services:
+  workspace:
+    image: jcrete4kids-labspace-workspace:local
+    build:
+      context: ./workspace

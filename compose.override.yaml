@@ -1,0 +1,14 @@
+services:
+  configurator:
+    environment:
+      PROJECT_CLONE_URL: https://github.com/shelajev/jcrete4kids
+
+  workspace:
+    image: olegselajev241/jcrete4kids-labspace-workspace:latest
+    environment:
+      JAVA_HOME: /opt/java/openjdk
+      PATH: /opt/java/openjdk/bin:/home/coder/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    ports: !override
+      - "8085:8085"
+      - "3000:3000"
+      - "8080:8080"

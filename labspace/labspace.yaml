@@ -1,0 +1,31 @@
+metadata:
+  id: olegselajev241/jcrete4kids-labspace
+  sourceRepo: github.com/shelajev/jcrete4kids
+  contentVersion: local
+
+title: Make Browser Games with Codex and Java
+description: |
+  A beginner-friendly workshop that uses Codex to build JavaScript games served from Java.
+
+sections:
+  - title: Welcome
+    contentPath: 01-welcome.md
+  - title: Workspace Setup
+    contentPath: 02-workspace-setup.md
+  - title: 3D Browser Game
+    contentPath: 03-3d-game.md
+  - title: 2D Browser Game
+    contentPath: 04-2d-game.md
+  - title: Customize Your Games
+    contentPath: 05-customize.md
+  - title: Wrap Up
+    contentPath: 06-wrap-up.md
+
+services:
+  - id: app
+    url: http://localhost:3000
+    title: Game Preview
+    icon: stadia_controller
+
+variables:
+  projectName: codex-java-games

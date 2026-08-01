@@ -1,0 +1,21 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background: #111827;
+  color: white;
+  font-family: system-ui, sans-serif;
+}
+
+canvas {
+  width: min(96vw, 960px);
+  aspect-ratio: 16 / 9;
+  border: 2px solid #38bdf8;
+  background: #082f49;
+}
+
