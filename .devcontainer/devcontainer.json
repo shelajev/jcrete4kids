@@ -1,0 +1,25 @@
+{
+  "name": "JCrete4Kids LabSpace",
+  "dockerComposeFile": "../compose.yaml",
+  "service": "workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/jcrete4kids,type=bind,consistency=cached",
+  "workspaceFolder": "/workspaces/jcrete4kids",
+  "shutdownAction": "stopCompose",
+  "forwardPorts": [
+    3030,
+    8085
+  ],
+  "portsAttributes": {
+    "3030": {
+      "label": "LabSpace",
+      "onAutoForward": "openBrowser"
+    },
+    "8085": {
+      "label": "Workspace IDE",
+      "onAutoForward": "notify"
+    }
+  },
+  "otherPortsAttributes": {
+    "onAutoForward": "silent"
+  }
+}
