@@ -6,15 +6,15 @@
   "workspaceFolder": "/workspaces/jcrete4kids",
   "shutdownAction": "stopCompose",
   "forwardPorts": [
-    3030,
-    8085
+    "interface:3030",
+    "workspace:8085"
   ],
   "portsAttributes": {
-    "3030": {
+    "interface:3030": {
       "label": "LabSpace",
       "onAutoForward": "openBrowser"
     },
-    "8085": {
+    "workspace:8085": {
       "label": "Workspace IDE",
       "onAutoForward": "notify"
     }
