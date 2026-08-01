@@ -2,27 +2,20 @@
 
 This workspace is for the JCrete4Kids Codex browser-games workshop.
 
-Create your generated games in a folder named `codex-java-games`.
-
-The intended pattern is:
+The game is already here:
 
 - Java starts a tiny local HTTP server.
-- JavaScript, Canvas, or WebGL renders the game in the browser.
+- JavaScript renders the game in the browser.
 - The game opens in the Labspace **Game Preview** tab.
 
-Useful commands:
+Run it:
 
 ```sh
 java -version
-mvn -version
-```
-
-Try the starter:
-
-```sh
-cd starter-web-game
 javac Main.java
 java Main
 ```
 
 Then open the **Game Preview** tab.
+
+Ask Codex to change `web/game.js`, `web/style.css`, `web/index.html`, and `Main.java`.

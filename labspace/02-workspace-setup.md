@@ -1,56 +1,30 @@
-# Workspace Setup
+# Run the Starter
 
-The learner workspace starts in `/home/coder/project`. The files from this Labspace's `project/` directory are already copied there.
+The workspace starts in `/home/coder/project`.
 
-## Open the Project
+In the terminal, run:
 
-In the IDE, open the Explorer and find:
-
-:fileLink[README.md]{path="README.md"}
-
-This file is a small starting point for the workshop.
-
-## Create a Scratch Folder
-
-Create one folder for the code Codex generates:
-
-```bash
-mkdir -p $$projectName$$
-```
-
-Move into it:
-
-```bash
-cd $$projectName$$
-pwd
-```
-
-## Try the Starter Pattern
-
-This Labspace includes a tiny Java HTTP server plus a JavaScript Canvas page. This is the pattern Codex should build on.
-
-```bash
-cd starter-web-game
+```bash no-run-button
+cd /home/coder/project
+java -version
 javac Main.java
 java Main
 ```
 
-Open the **Game Preview** tab. Stop the server with `Ctrl+C` before starting another game server.
+Open the **Game Preview** tab. You should see a simple starter with a yellow circle.
 
 ## Open Codex
 
 Open the Codex panel in VS Code.
 
-If you do not see Codex:
+Sign in or enter the key from your instructor.
 
-1. Open the Extensions panel.
-2. Search for `Codex` or `ChatGPT`.
-3. Install the OpenAI/Codex extension if it is not already installed.
-4. Reload the IDE if prompted.
+If Codex asks whether you trust the folder, trust it for this workshop.
 
-If Codex asks whether you trust the folder, trust it for this workshop. The folder is empty and isolated inside the Labspace.
+## First Prompt
 
-If Codex asks for an API key, use the key provided by the instructor.
+Copy this into Codex:
 
-> [!NOTE]
-> The exact Codex extension UI can change. The important part is that Codex can read and edit files in `/home/coder/project/$$projectName$$`.
+```text no-run-button
+Look at this project. It is a Java server with a browser game in web/game.js. Explain the files in two short bullets, then wait for my next request.
+```

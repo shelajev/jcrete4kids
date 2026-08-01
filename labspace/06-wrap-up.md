@@ -1,14 +1,13 @@
 # Wrap Up
 
-You used Codex as a coding partner to create and modify Java games.
+You used Codex as a coding partner to create and modify a browser game.
 
 You practiced:
 
-- asking for a complete starter project
-- running generated Java code
-- reading generated files
+- running Java code
+- changing JavaScript game code
 - asking Codex to explain code
-- iterating with compile errors
+- fixing errors with Codex
 - adding game rules and assets through prompts
 
 ## Final Challenge
@@ -31,7 +30,6 @@ Add FEATURE to this game. Keep the existing controls working. After changing the
 
 Before leaving, list the files you created:
 
-```bash
-find $$projectName$$ -maxdepth 3 -type f | sort | head -100
+```bash no-run-button
+find . -maxdepth 3 -type f | sort | head -100
 ```
-

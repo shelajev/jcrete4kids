@@ -46,4 +46,3 @@ public class Main {
     return "application/octet-stream";
   }
 }
-

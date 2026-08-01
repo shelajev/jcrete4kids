@@ -1,43 +1,24 @@
 # Browser 3D Game
 
-Start a new Codex chat. Ask Codex to create a Java project that serves a JavaScript 3D game.
+Ask Codex to turn the starter into a 3D-style game.
 
 Copy this prompt into Codex:
 
 ```text no-run-button
-Create a Java project for a browser-playable 3D cat game. Use Java's built-in HTTP server or a small Maven/Gradle project to serve the game on port 3000. Use HTML, CSS, and JavaScript for rendering. You may use Three.js from a CDN or simple Canvas/WebGL code. Include a cat player, collectible stars, simple obstacles, score, and keyboard controls. Create all files inside the current folder. Then run the server and tell me how to open the game.
+Change this starter into a browser-playable 3D-style cat game. Keep the existing Java server on port 3000. Put the game code in web/game.js, with any CSS in web/style.css. Use Canvas, CSS 3D, or Three.js from a CDN. Add a cat player, collectible stars, simple obstacles, score, and keyboard controls. Run it and fix any errors.
 ```
 
 ## Run What Codex Creates
 
-Codex may choose plain Java, Maven, or Gradle. When it finishes, look for files like `src/`, `pom.xml`, `gradlew`, `build.gradle`, or `Main.java`.
+Most changes should be in `web/game.js`. If the server is not running:
 
-If Codex creates a plain Java server, the commands may look like:
-
-```bash
-cd $$projectName$$
-javac src/*.java
-java -cp src Main
-```
-
-If Codex creates a Maven project, the run command may look like:
-
-```bash
-mvn compile exec:java
-```
-
-If Codex creates a Gradle project, ask it for the exact run command. Gradle Wrapper can download Gradle, but Java must already be installed.
-
-```text no-run-button
-Which command runs this Java server for the browser game? Run it if possible.
+```bash no-run-button
+javac Main.java
+java Main
 ```
 
 ## Open the Game
 
-When the server is running on port `3000`, open the **Game Preview** tab.
-
-If Codex uses port `8080` instead, open:
-
-::tabLink[Open port 8080]{href="http://localhost:8080" title="Game on 8080" id="app-8080"}
+Open the **Game Preview** tab.
 
 When something fails, paste the exact error back into Codex and ask it to fix the project.
