@@ -1,25 +1,29 @@
 {
-  "name": "JCrete4Kids LabSpace",
-  "dockerComposeFile": "../compose.yaml",
-  "service": "workspace",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/jcrete4kids,type=bind,consistency=cached",
-  "workspaceFolder": "/workspaces/jcrete4kids",
-  "shutdownAction": "stopCompose",
+  "name": "JCrete4Kids LabSpace Controller",
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+  },
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "forwardPorts": [
-    "interface:3030",
-    "workspace:8085"
+    3030,
+    8085
   ],
   "portsAttributes": {
-    "interface:3030": {
+    "3030": {
       "label": "LabSpace",
-      "onAutoForward": "openBrowser"
-    },
-    "workspace:8085": {
-      "label": "Workspace IDE",
       "onAutoForward": "notify"
+    },
+    "8085": {
+      "label": "Workspace IDE",
+      "onAutoForward": "silent"
     }
   },
-  "otherPortsAttributes": {
-    "onAutoForward": "silent"
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "task.allowAutomaticTasks": "on"
+      }
+    }
   }
 }
