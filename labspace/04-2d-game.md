@@ -1,16 +1,21 @@
-# Browser 2D Game
+# Second Game: 2D Fish
 
-Now make a different game. This can replace the cat game; the point is to keep changing code with Codex.
+Now try a smaller 2D game. This can replace the cat game.
 
 Copy this prompt into Codex:
 
 ```text no-run-button
-Replace the current game with a browser-playable 2D fish game. Keep Main.java as the Java server on port 3000. Put the game in web/game.js. The player controls a fish, collects food, avoids one enemy, and sees score and health. Use arrow keys. Run it and fix any errors.
+Replace the current game with a browser-playable 2D fish game. Keep Main.java as the Java server on port 3000. Put the game in web/game.js. The player controls a fish, collects food, avoids one enemy, and sees score and health. Use arrow keys. Make it colorful and easy to understand. Run the project and fix any errors.
 ```
 
 ## Run the Game
 
-If the server is still running, refresh the **Game Preview** tab.
+If the server is still running, refresh the **Game Preview** tab. If it stopped, run:
+
+```bash no-run-button
+javac Main.java
+java Main
+```
 
 ## Think About Codex's Choices
 

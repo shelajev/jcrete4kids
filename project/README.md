@@ -19,3 +19,13 @@ java Main
 Then open the **Game Preview** tab.
 
 Ask Codex to change `web/game.js`, `web/style.css`, `web/index.html`, and `Main.java`.
+
+Good first prompts:
+
+```text
+Change this starter into a browser-playable 3D-style cat game with stars, obstacles, score, and keyboard controls. Keep the Java server on port 3000.
+```
+
+```text
+Replace the current game with a colorful 2D fish game. Add food, one enemy, score, health, and arrow-key controls. Keep the Java server on port 3000.
+```

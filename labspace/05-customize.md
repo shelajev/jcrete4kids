@@ -1,13 +1,13 @@
-# Customize Your Games
+# Make It Yours
 
-Now change the game by asking Codex for specific behavior.
+Now change the game by asking for specific behavior. Small prompts work well here.
 
 ## Add an Enemy
 
 Copy this prompt:
 
 ```text no-run-button
-Add a chicken enemy that chases the player. If it touches the player, reduce health. Show a health bar above the player. Keep the game in the browser and keep the Java server on port 3000.
+Add a chicken enemy that chases the player. If it touches the player, reduce health. Show a health bar above the player. Keep the game in the browser and keep the Java server on port 3000. Run it and fix any errors.
 ```
 
 If Codex tries to create a desktop-only game, redirect it:
@@ -22,15 +22,21 @@ Do not use Swing, JavaFX, LWJGL desktop windows, or native OpenGL. Keep this as 
 Every time the player collects 5 items, make the game harder. Add one new enemy, increase speed a little, and show the current level.
 ```
 
-## Add Your Own Sprite
+## Change the World
 
-If you have a PNG image, upload it into the project. Then ask Codex to use it:
+Pick one:
 
 ```text no-run-button
-Use ___.png as a sprite for ___. Make it chase the player. If it touches the player, the player loses ___ health.
+Add a start screen with a title and a Play button.
 ```
 
-Replace the blanks before sending the prompt.
+```text no-run-button
+Add a game-over screen with a Restart button.
+```
+
+```text no-run-button
+Add coins, power-ups, and a timer. Show them clearly on the screen.
+```
 
 ## A Useful Debugging Prompt
 

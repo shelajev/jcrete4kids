@@ -12,14 +12,16 @@ sections:
     contentPath: 01-welcome.md
   - title: Run the Starter
     contentPath: 02-workspace-setup.md
-  - title: Make a 3D Game
+  - title: 3D Cat Game
     contentPath: 03-3d-game.md
-  - title: Make a 2D Game
+  - title: 2D Fish Game
     contentPath: 04-2d-game.md
-  - title: Customize
+  - title: Make It Yours
     contentPath: 05-customize.md
-  - title: Wrap Up
-    contentPath: 06-wrap-up.md
+  - title: Add an Asset
+    contentPath: 06-assets.md
+  - title: Final Challenge
+    contentPath: 07-wrap-up.md
 
 services:
   - id: app
